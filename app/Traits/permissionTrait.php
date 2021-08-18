@@ -5,13 +5,13 @@ use Illuminate\Support\Facades\Route;
 trait permissionTrait{
    public function hasPermission()
    {
-      if(!isset(auth()->user()->role->permission['name']['department']['can-edit']) && Route::is('permissions.edit') ){
+      if(!isset(auth()->user()->role->permission['name']['department']['can-edit']) && Route::is('department.edit') ){
          return abort(401);
       }
-      if(!isset(auth()->user()->role->permission['name']['department']['can-list']) && Route::is('permissions.index') ){
+      if(!isset(auth()->user()->role->permission['name']['department']['can-list']) && Route::is('department.index') ){
          return abort(401);
       }
-      if(!isset(auth()->user()->role->permission['name']['department']['can-add']) && Route::is('permissions.create') ){
+      if(!isset(auth()->user()->role->permission['name']['department']['can-add']) && Route::is('department.create') ){
          return abort(401);
       }
 
